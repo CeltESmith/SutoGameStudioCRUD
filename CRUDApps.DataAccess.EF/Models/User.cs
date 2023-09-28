@@ -13,5 +13,22 @@ namespace CRUDApps.DataAccess.EF.Models
         public string CustomerState { get; set; } = null!;
 
         public virtual LoyaltyChart UserNameNavigation { get; set; } = null!;
+
+        public User(int userId, string userName, string customerFirstName, string customerLastName, string customerEmail, string customerState, LoyaltyChart userNameNavigation)
+        {
+            UserId = userId;
+            UserName = userName;
+            CustomerFirstName = customerFirstName;
+            CustomerLastName = customerLastName;
+            CustomerEmail = customerEmail;
+            CustomerState = customerState;
+
+            UserNameNavigation = userNameNavigation;
+        }
+
+        public User()
+        {
+
+        }
     }
 }
