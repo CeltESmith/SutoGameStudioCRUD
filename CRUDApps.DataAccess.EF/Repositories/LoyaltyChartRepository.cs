@@ -18,7 +18,7 @@ namespace CRUDApps.DataAccess.EF.Repositories
             _dbContext = dbContext;
         }
 
-        public int Create(LoyaltyChart loyaltyChart)
+        public int Create(LoyaltyCharts loyaltyChart)
         {
             _dbContext.Add(loyaltyChart);
             _dbContext.SaveChanges();
@@ -26,9 +26,9 @@ namespace CRUDApps.DataAccess.EF.Repositories
             return loyaltyChart.LoyaltyChartId;
         }
 
-        public int Update(LoyaltyChart loyaltyChart)
+        public int Update(LoyaltyCharts loyaltyChart)
         {
-            LoyaltyChart existingLoyalty = _dbContext.LoyaltyChart.Find(loyaltyChart.LoyaltyChartId);
+            LoyaltyCharts existingLoyalty = _dbContext.LoyaltyCharts.Find(loyaltyChart.LoyaltyChartId);
 
             existingLoyalty.UserName = loyaltyChart.UserName;
             existingLoyalty.OwnFpsblastGame = loyaltyChart.OwnFpsblastGame;
@@ -43,23 +43,23 @@ namespace CRUDApps.DataAccess.EF.Repositories
 
         public bool Delete(int loyaltyChartId)
         {
-            LoyaltyChart loyaltyChart = _dbContext.LoyaltyChart.Find(loyaltyChartId);
+            LoyaltyCharts loyaltyChart = _dbContext.LoyaltyCharts.Find(loyaltyChartId);
             _dbContext.Remove(loyaltyChart);
             _dbContext.SaveChanges();
 
             return true;
         }
 
-        public List<LoyaltyChart> GetAllLoyaltyCharts()
+        public List<LoyaltyCharts> GetAllLoyaltyCharts()
         {
-            List<LoyaltyChart> loyaltyCharts = _dbContext.LoyaltyChart.ToList();
+            List<LoyaltyCharts> loyaltyCharts = _dbContext.LoyaltyCharts.ToList();
 
             return loyaltyCharts;
         }
 
-        public LoyaltyChart GetLoyaltyChartByID(int loyaltyChartID)
+        public LoyaltyCharts GetLoyaltyChartByID(int loyaltyChartID)
         {
-            LoyaltyChart loyaltyChart = _dbContext.LoyaltyChart.Find(loyaltyChartID);
+            LoyaltyCharts loyaltyChart = _dbContext.LoyaltyCharts.Find(loyaltyChartID);
 
             return loyaltyChart;
         }
