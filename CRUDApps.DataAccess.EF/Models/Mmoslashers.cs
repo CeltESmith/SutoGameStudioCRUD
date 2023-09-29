@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CRUDApps.DataAccess.EF.Models
 {
-    public partial class Mmoslasher
+    public partial class Mmoslashers
     {
 
         public int MmoslasherId { get; set; }
@@ -13,9 +13,9 @@ namespace CRUDApps.DataAccess.EF.Models
         public string ActiveLast30Days { get; set; } = null!;
         public string OwnMmoslasherGame { get; set; } = null!;
 
-        public virtual ICollection<LoyaltyChart> LoyaltyCharts { get; set; }
+        public virtual ICollection<LoyaltyCharts> LoyaltyCharts { get; set; }
 
-        public Mmoslasher(int mmoslasherId, string userName, TimeSpan timePlayed, string expansion1, string activeLast30Days, string ownMmoslasherGame, ICollection<LoyaltyChart> loyaltyChart)
+        public Mmoslashers(int mmoslasherId, string userName, TimeSpan timePlayed, string expansion1, string activeLast30Days, string ownMmoslasherGame, ICollection<LoyaltyCharts> loyaltyChart)
         {
             MmoslasherId = mmoslasherId;
             UserName = userName;
@@ -23,12 +23,12 @@ namespace CRUDApps.DataAccess.EF.Models
             Expansion1 = expansion1;
             ActiveLast30Days = activeLast30Days;
             OwnMmoslasherGame = ownMmoslasherGame;
-            LoyaltyCharts = new HashSet<LoyaltyChart>(loyaltyChart);
+            LoyaltyCharts = new HashSet<LoyaltyCharts>(loyaltyChart);
         }
 
-        public Mmoslasher()
+        public Mmoslashers()
         {
-            LoyaltyCharts = new HashSet<LoyaltyChart>();
+            LoyaltyCharts = new HashSet<LoyaltyCharts>();
         }
     }
 }
