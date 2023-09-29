@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CRUDApps.DataAccess.EF.Models
 {
-    public partial class LoyaltyChart
+    public partial class LoyaltyCharts
     {
 
         public int LoyaltyChartId { get; set; }
@@ -13,12 +13,12 @@ namespace CRUDApps.DataAccess.EF.Models
         public string OwnRpgstoryMakerGame { get; set; } = null!;
         public string IsLoyalCustomer { get; set; } = null!;
 
-        public virtual Fpsblast OwnFpsblastGameNavigation { get; set; } = null!;
-        public virtual Mmoslasher OwnMmoslasherGameNavigation { get; set; } = null!;
-        public virtual RpgstoryMaker OwnRpgstoryMakerGameNavigation { get; set; } = null!;
-        public virtual ICollection<User> Users { get; set; }
+        public virtual Fpsblasts OwnFpsblastGameNavigation { get; set; } = null!;
+        public virtual Mmoslashers OwnMmoslasherGameNavigation { get; set; } = null!;
+        public virtual RpgstoryMakers OwnRpgstoryMakerGameNavigation { get; set; } = null!;
+        public virtual ICollection<Users> Users { get; set; }
 
-        public LoyaltyChart(int loyaltyChartId, string userName, string ownFpsblastGame, string ownMmoslasherGame, string ownRpgstoryMakerGame, string isLoyalCustomer, Fpsblast ownFpsblastGameNavigation, Mmoslasher ownMmoslasherGameNavigation, RpgstoryMaker ownRpgstoryMakerGameNavigation,  ICollection<User> users)
+        public LoyaltyCharts(int loyaltyChartId, string userName, string ownFpsblastGame, string ownMmoslasherGame, string ownRpgstoryMakerGame, string isLoyalCustomer, Fpsblasts ownFpsblastGameNavigation, Mmoslashers ownMmoslasherGameNavigation, RpgstoryMakers ownRpgstoryMakerGameNavigation,  ICollection<Users> users)
         {
             LoyaltyChartId = loyaltyChartId;
             UserName = userName;
@@ -30,11 +30,11 @@ namespace CRUDApps.DataAccess.EF.Models
             OwnFpsblastGameNavigation = ownFpsblastGameNavigation;
             OwnMmoslasherGameNavigation = ownMmoslasherGameNavigation;
             OwnRpgstoryMakerGameNavigation = ownRpgstoryMakerGameNavigation;
-            Users = new HashSet<User>(users);
+            Users = new HashSet<Users>(users);
         }
-        public LoyaltyChart()
+        public LoyaltyCharts()
         {
-            Users = new HashSet<User>();
+            Users = new HashSet<Users>();
         }
     }
 }
