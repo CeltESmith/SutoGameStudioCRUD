@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CRUDApps.DataAccess.EF.Models
 {
-    public partial class User
+    public partial class Users
     {
         public int UserId { get; set; }
         public string UserName { get; set; } = null!;
@@ -12,9 +12,9 @@ namespace CRUDApps.DataAccess.EF.Models
         public string CustomerEmail { get; set; } = null!;
         public string CustomerState { get; set; } = null!;
 
-        public virtual LoyaltyChart UserNameNavigation { get; set; } = null!;
+        public virtual LoyaltyCharts UserNameNavigation { get; set; } = null!;
 
-        public User(int userId, string userName, string customerFirstName, string customerLastName, string customerEmail, string customerState, LoyaltyChart userNameNavigation)
+        public Users(int userId, string userName, string customerFirstName, string customerLastName, string customerEmail, string customerState, LoyaltyCharts userNameNavigation)
         {
             UserId = userId;
             UserName = userName;
@@ -26,7 +26,7 @@ namespace CRUDApps.DataAccess.EF.Models
             UserNameNavigation = userNameNavigation;
         }
 
-        public User()
+        public Users()
         {
 
         }
