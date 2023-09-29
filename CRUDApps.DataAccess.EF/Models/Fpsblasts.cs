@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CRUDApps.DataAccess.EF.Models
 {
-    public partial class Fpsblast
+    public partial class Fpsblasts
     {
 
         public int FpsblastId { get; set; }
@@ -12,21 +12,21 @@ namespace CRUDApps.DataAccess.EF.Models
         public string Expansion1 { get; set; } = null!;
         public string OwnFpsblastGame { get; set; } = null!;
 
-        public virtual ICollection<LoyaltyChart> LoyaltyCharts { get; set; }
+        public virtual ICollection<LoyaltyCharts> LoyaltyCharts { get; set; }
 
-        public Fpsblast(int fpsblastId, string userName, TimeSpan timePlayed, string expansion1, string ownFpsblastGame, ICollection<LoyaltyChart> loyaltyCharts)
+        public Fpsblasts(int fpsblastId, string userName, TimeSpan timePlayed, string expansion1, string ownFpsblastGame, ICollection<LoyaltyCharts> loyaltyCharts)
         {
             FpsblastId = fpsblastId;
             UserName = userName;
             TimePlayed = timePlayed;
             Expansion1 = expansion1;
             OwnFpsblastGame = ownFpsblastGame;
-            LoyaltyCharts = new HashSet<LoyaltyChart>(loyaltyCharts);
+            LoyaltyCharts = new HashSet<LoyaltyCharts>(loyaltyCharts);
         }
 
-        public Fpsblast()
+        public Fpsblasts()
         {
-            LoyaltyCharts = new HashSet<LoyaltyChart>();
+            LoyaltyCharts = new HashSet<LoyaltyCharts>();
         }
     }
 }
