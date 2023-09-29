@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CRUDApps.DataAccess.EF.Models
 {
-    public partial class RpgstoryMaker
+    public partial class RpgstoryMakers
     {
 
         public int RpgstoryMakerId { get; set; }
@@ -12,21 +12,21 @@ namespace CRUDApps.DataAccess.EF.Models
         public string GameCompleted { get; set; } = null!;
         public string OwnRpgstoryMakerGame { get; set; } = null!;
 
-        public virtual ICollection<LoyaltyChart> LoyaltyCharts { get; set; }
+        public virtual ICollection<LoyaltyCharts> LoyaltyCharts { get; set; }
 
-        public RpgstoryMaker (int rpgstoryMakerId, string userName, TimeSpan timePlayed, string gameCompleted, string ownRpgstoryMakerGame, ICollection<LoyaltyChart> loyaltyChart)
+        public RpgstoryMakers (int rpgstoryMakerId, string userName, TimeSpan timePlayed, string gameCompleted, string ownRpgstoryMakerGame, ICollection<LoyaltyCharts> loyaltyChart)
         {
             RpgstoryMakerId = rpgstoryMakerId;
             UserName = userName;
             TimePlayed = timePlayed;
             GameCompleted = gameCompleted;
             OwnRpgstoryMakerGame = ownRpgstoryMakerGame;
-            LoyaltyCharts = new HashSet<LoyaltyChart>(loyaltyChart);
+            LoyaltyCharts = new HashSet<LoyaltyCharts>(loyaltyChart);
         }
 
-        public RpgstoryMaker()
+        public RpgstoryMakers()
         {
-            LoyaltyCharts = new HashSet<LoyaltyChart>();
+            LoyaltyCharts = new HashSet<LoyaltyCharts>();
         }
     }
 }
