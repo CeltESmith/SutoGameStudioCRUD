@@ -17,11 +17,11 @@ namespace CRUDApps.DataAccess.EF.Context
         {
         }
 
-        public virtual DbSet<Fpsblast> Fpsblasts { get; set; } = null!;
-        public virtual DbSet<LoyaltyChart> LoyaltyCharts { get; set; } = null!;
-        public virtual DbSet<Mmoslasher> Mmoslashers { get; set; } = null!;
-        public virtual DbSet<RpgstoryMaker> RpgstoryMakers { get; set; } = null!;
-        public virtual DbSet<User> Users { get; set; } = null!;
+        public virtual DbSet<Fpsblasts> Fpsblasts { get; set; } = null!;
+        public virtual DbSet<LoyaltyCharts> LoyaltyCharts { get; set; } = null!;
+        public virtual DbSet<Mmoslashers> Mmoslashers { get; set; } = null!;
+        public virtual DbSet<RpgstoryMakers> RpgstoryMakers { get; set; } = null!;
+        public virtual DbSet<Users> Users { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,7 +34,7 @@ namespace CRUDApps.DataAccess.EF.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Fpsblast>(entity =>
+            modelBuilder.Entity<Fpsblasts>(entity =>
             {
                 entity.HasKey(e => e.OwnFpsblastGame)
                     .HasName("PK__FPSBlast__E4337389C244D6D3");
@@ -62,7 +62,7 @@ namespace CRUDApps.DataAccess.EF.Context
                     .IsFixedLength();
             });
 
-            modelBuilder.Entity<LoyaltyChart>(entity =>
+            modelBuilder.Entity<LoyaltyCharts>(entity =>
             {
                 entity.HasKey(e => e.UserName)
                     .HasName("PK__LoyaltyC__E865F5550DD2B2E7");
@@ -118,7 +118,7 @@ namespace CRUDApps.DataAccess.EF.Context
                     .HasConstraintName("FK_LoyaltyChart_RPGStoryMaker1");
             });
 
-            modelBuilder.Entity<Mmoslasher>(entity =>
+            modelBuilder.Entity<Mmoslashers>(entity =>
             {
                 entity.HasKey(e => e.OwnMmoslasherGame)
                     .HasName("PK__MMOSlash__89964FB4E17A71CC");
@@ -151,7 +151,7 @@ namespace CRUDApps.DataAccess.EF.Context
                     .IsFixedLength();
             });
 
-            modelBuilder.Entity<RpgstoryMaker>(entity =>
+            modelBuilder.Entity<RpgstoryMakers>(entity =>
             {
                 entity.HasKey(e => e.OwnRpgstoryMakerGame)
                     .HasName("PK__RPGStory__E43373890CDC9A84");
@@ -179,7 +179,7 @@ namespace CRUDApps.DataAccess.EF.Context
                     .IsFixedLength();
             });
 
-            modelBuilder.Entity<User>(entity =>
+            modelBuilder.Entity<Users>(entity =>
             {
                 entity.Property(e => e.CustomerEmail)
                     .HasMaxLength(255)
